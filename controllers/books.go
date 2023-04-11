@@ -35,8 +35,23 @@ func AddBook(c *gin.Context) {
 
 func GetAllBooks(c *gin.Context) {
 	var Books = BooksData
+	// var AllDatas []Books
+	// condition := false
+
+	// if len(BooksData) > 0 {
+	// 	condition = true
+	// 	AllDatas = append(AllDatas, BooksData...)
+	// }
+
+	// if !condition {
+	// 	c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
+	// 		"error_status":  "Data not found",
+	// 		"error_message": "Data is empty",
+	// 	})
+	// }
 
 	c.JSON(http.StatusOK, gin.H{
+		// "books": AllDatas,
 		"books": Books,
 	})
 }
