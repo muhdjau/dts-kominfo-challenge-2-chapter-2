@@ -29,7 +29,7 @@ func AddBook(c *gin.Context) {
 	BooksData = append(BooksData, newBook)
 
 	c.JSON(http.StatusCreated, gin.H{
-		"car": newBook,
+		"data": newBook,
 	})
 }
 
@@ -52,7 +52,7 @@ func GetAllBooks(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{
 		// "books": AllDatas,
-		"books": Books,
+		"data": Books,
 	})
 }
 
@@ -73,13 +73,13 @@ func GetBookById(c *gin.Context) {
 	if !condition {
 		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
 			"error_status":  "Data not found",
-			"error_message": fmt.Sprintf("Car with id %v not found", bookID),
+			"error_message": fmt.Sprintf("Book with id %v not found", bookID),
 		})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"car": bookData,
+		"data": bookData,
 	})
 }
 
@@ -106,13 +106,13 @@ func UpdateBook(c *gin.Context) {
 	if !condition {
 		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
 			"error_status":  "Data not found",
-			"error_message": fmt.Sprintf("Car with id %v not found", bookID),
+			"error_message": fmt.Sprintf("Book with id %v not found", bookID),
 		})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"message": fmt.Sprintf("Car with id %v has been successfully updated", bookID),
+		"message": fmt.Sprintf("Book with id %v has been successfully updated", bookID),
 	})
 }
 
@@ -133,7 +133,7 @@ func DeleteBook(c *gin.Context) {
 	if !condition {
 		c.AbortWithStatusJSON(http.StatusNotFound, gin.H{
 			"error_status":  "Data not found",
-			"error_message": fmt.Sprintf("Car with id %v not found", bookID),
+			"error_message": fmt.Sprintf("Book with id %v not found", bookID),
 		})
 		return
 	}
@@ -143,6 +143,6 @@ func DeleteBook(c *gin.Context) {
 	BooksData = BooksData[:len(BooksData)-1]
 
 	c.JSON(http.StatusOK, gin.H{
-		"message": fmt.Sprintf("Car with id %v has been successfully deleted", bookID),
+		"message": fmt.Sprintf("Book with id %v has been successfully deleted", bookID),
 	})
 }

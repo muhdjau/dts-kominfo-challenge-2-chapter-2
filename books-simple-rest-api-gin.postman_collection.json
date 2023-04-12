@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ffdcfc6f-7749-4565-9999-5b32825303bc",
-		"name": "books-simple-rest-api-with-gin",
+		"name": "books-simple-rest-api-gin",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23057737"
 	},
